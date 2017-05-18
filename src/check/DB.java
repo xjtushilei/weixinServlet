@@ -10,7 +10,7 @@ public class DB {
 
 	public static void main(String[] args) {
 //		System.out.println(get( "dfasfsad"));
-//		System.out.println(add("sad", "1"));
+		System.out.println(add("sad", "1"));
 		System.out.println("签到绑定微信1234567890".length());
 	}
 
@@ -19,9 +19,8 @@ public class DB {
 		mysqlUtils mysql = new mysqlUtils();
 		try {
 			// 先进行删除
-			String sql = "delete from userbind where CardID=?  and WeixinID=?";
+			String sql = "delete from userbind where WeixinID=?";
 			List<Object> params = new ArrayList<Object>();
-			params.add(CardID);
 			params.add(WeixinID);
 			mysql.addDeleteModify(sql, params);
 			// 再进行添加，确保不会重复

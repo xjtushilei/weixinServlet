@@ -11,7 +11,7 @@ public class Config {
 	 * mysql 配置
 	 * 
 	 */
-	public static String MYSQL_HOST="api.xjtushilei.com";
+	public static String MYSQL_HOST="html.xjtushilei.com";
 	public static String MYSQL_PORT="3306";
 	public static String MYSQL_USER="shilei_weixin";
 	public static String MYSQL_PASSWD="shilei123qwe";
