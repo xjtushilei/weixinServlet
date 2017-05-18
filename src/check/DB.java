@@ -24,13 +24,17 @@ public class DB {
 			params.add(WeixinID);
 			mysql.addDeleteModify(sql, params);
 			// 再进行添加，确保不会重复
+			List<Object> params222 = new ArrayList<Object>();
+			params222.add(CardID);
+			params222.add(WeixinID);
 			sql = "insert into userbind  (CardID,WeixinID) values(?,?)";
-			mysql.addDeleteModify(sql, params);
+			mysql.addDeleteModify(sql, params222);
 			
 			result="您好！\n"
 					+ WeixinID+"-"+CardID+"\n"
 					+ "绑定成功!";
 		} catch (Exception e) {
+			System.out.println(e);
 			result = "您好~\n" + "绑定发生了意外~\n" + "请重试或者联系管理员 xjtushilei@foxmail.com";
 		} finally {
 			mysql.closeconnection();
