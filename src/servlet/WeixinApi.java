@@ -37,7 +37,7 @@ public class WeixinApi extends HttpServlet {
 			sb.append(s);
 		}
 		String xml = sb.toString();	//次即为接收到微信端发送过来的xml数据
-		FileUtils.write(new File("C://a.txt"),xml+ "\n", true);
+//		FileUtils.write(new File("C://a.txt"),xml+ "\n", true);
 		String result = "";
 		/** 判断是否是微信接入激活验证，只有首次接入验证时才会收到echostr参数，此时需要把它直接返回 */
 		String echostr = request.getParameter("echostr");

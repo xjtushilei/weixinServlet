@@ -11,10 +11,10 @@ public class Config {
 	 * mysql 配置
 	 * 
 	 */
-	public static String MYSQL_HOST="html.xjtushilei.com";
+	public static String MYSQL_HOST="localhost";
 	public static String MYSQL_PORT="3306";
 	public static String MYSQL_USER="shilei_weixin";
-	public static String MYSQL_PASSWD="shilei123qwe";
+	public static String MYSQL_PASSWD="shilei_weixin";
 	public static String MYSQL_DB="shilei_weixin";
 	public static String MYSQL_URL="jdbc:mysql://"+MYSQL_HOST+":"+MYSQL_PORT+"/"+MYSQL_DB+"?user="+MYSQL_USER+"&password="+MYSQL_PASSWD+"&characterEncoding=UTF8";
 
