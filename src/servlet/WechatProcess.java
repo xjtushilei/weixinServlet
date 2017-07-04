@@ -26,7 +26,7 @@ public class WechatProcess {
 				result="您好！\n"
 						+ "功能介绍：\n"
 						+ "1.智能机器人:随时与机器人聊天~\n"
-						+ "2.特殊指令：回复一下任意特殊指令，查看特效！\n"
+						+ "2.特殊指令：回复一下任意特殊指令，不带括号，查看特效！\n"
 						+ "【签到绑定微信】、【签到】……未完待续";
 			}else if(xmlEntity.getContent().equals("签到")){
 				String WeixinID=xmlEntity.getFromUserName();

@@ -50,7 +50,7 @@ public class check {
 		        temp=EntityUtils.toString(entity,"utf-8");
 		    }catch (Exception e) {}
 		    temp=unicodeToUtf8(temp);
-		    return new Date().toLocaleString()+"\n"+temp;
+		    return "(2017年新系统版本)"+"\n"+new Date().toLocaleString()+"\n"+temp;
 	    }    
 	 
 	 public static String unicodeToUtf8(String theString) {
