@@ -8,10 +8,13 @@ import java.util.List;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
@@ -24,6 +27,29 @@ public class check {
 		System.out.println();
 	}
 	public static String get(String id) {
+		/** 发送httpget请求 */
+		// http://123.139.159.38:9218/API/send/get?id=4250228211&ip=202.117.54.85&city=%E9%99%95%E8%A5%BF%E7%9C%81&
+		String url = "http://123.139.159.38:9214/sign-by-quartz/zhuanfa?id=" + id;
+		HttpGet request = new HttpGet(url);
+		String result = "";
+		try {
+			HttpResponse response = HttpClients.createDefault().execute(request);
+			if (response.getStatusLine().getStatusCode() == 200) {
+				result = EntityUtils.toString(response.getEntity());
+			}
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		/** 请求失败处理 */
+		if (null == result) {
+			return "对不起,失败了，真是奇怪~要不要再试试……或许是因为网络不好~";
+		}
+	    return "(2017年新系统版本)"+"\n"+new Date().toLocaleString()+"\n"+result+"\n"+"打开： http://checkin.9lou.org  查看是否成功！";
+	}
+  
+	public static String postxxxx(String id) {
 		//httpClient
 		    HttpClient httpClient = new DefaultHttpClient();
 
@@ -50,7 +76,7 @@ public class check {
 		        temp=EntityUtils.toString(entity,"utf-8");
 		    }catch (Exception e) {}
 		    temp=unicodeToUtf8(temp);
-		    return "(2017年新系统版本)"+"\n"+new Date().toLocaleString()+"\n"+temp;
+		    return "(2017年新系统版本)"+"\n"+new Date().toLocaleString()+"\n"+temp+"\n"+"打开： http://checkin.9lou.org  查看是否成功！";
 	    }    
 	 
 	 public static String unicodeToUtf8(String theString) {
