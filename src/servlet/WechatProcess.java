@@ -42,7 +42,7 @@ public class WechatProcess {
 				else {
 					result=check.get(CardID);
 				}
-
+				result =  "应学术部要求，关掉该签到服务了~~ 大家努力加油哦！"+":) \n\n"+"天地网实验室考勤系统：http://checkin.9lou.org ";
 			}
 			else if(xmlEntity.getContent().equals("签到绑定微信")){
 				result="回复：签到绑定微信+打卡的id\n"
