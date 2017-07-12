@@ -42,6 +42,7 @@ public class DB {
 		return result;
 	}
 
+
 	public static String get(String WeixinID) {
 		String result = "";
 		mysqlUtils mysql = new mysqlUtils();
@@ -59,6 +60,26 @@ public class DB {
 		} catch (Exception e) {
 			e.printStackTrace();
 			result = "出错";
+		} finally {
+			mysql.closeconnection();
+		}
+		return result;
+	}
+	
+	public static boolean canSign(String id) {
+		boolean result = false;
+		mysqlUtils mysql = new mysqlUtils();
+		try {
+			String sql = "select * from sign_users where idcard=?";
+			List<Object> params = new ArrayList<Object>();
+			params.add(id);
+			List<Map<String, Object>> list=new ArrayList<Map<String, Object>>();
+			list=mysql.returnMultipleResult(sql, params);
+			if (list.size()!=0) {
+				result=true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			mysql.closeconnection();
 		}

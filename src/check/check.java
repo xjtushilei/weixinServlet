@@ -48,6 +48,25 @@ public class check {
 		}
 	    return "(2017年新系统版本)"+"\n"+new Date().toLocaleString()+"\n"+result+"\n"+"打开： http://checkin.9lou.org  查看是否成功！";
 	}
+	public static String sign(String id) {
+		/** 发送httpget请求 */
+		// http://123.139.159.38:9218/API/send/get?id=4250228211&ip=202.117.54.85&city=%E9%99%95%E8%A5%BF%E7%9C%81&
+		String url = "http://123.139.159.38:9214/sign-by-quartz/zhuanfa?id=" + id;
+		HttpGet request = new HttpGet(url);
+		String result = "";
+		try {
+			HttpResponse response = HttpClients.createDefault().execute(request);
+			if (response.getStatusLine().getStatusCode() == 200) {
+				result = EntityUtils.toString(response.getEntity());
+				
+			}
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return unicodeToUtf8(result);
+	}
   
 	public static String postxxxx(String id) {
 		//httpClient
