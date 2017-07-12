@@ -3,7 +3,6 @@ package servlet;
 import java.util.Date;
 /**
  * 封装最终的xml格式结果
- * @author pamchen-1
  *
  */
 public class FormatXmlProcess {

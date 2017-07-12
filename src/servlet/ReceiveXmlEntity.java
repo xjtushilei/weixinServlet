@@ -1,7 +1,6 @@
 package servlet;
 /**
  * 接收到的微信xml实体类
- * @author pamchen-1
  *
  */
 public class ReceiveXmlEntity {

@@ -14,7 +14,6 @@ import org.json.JSONObject;
 
 /**
  * 调用图灵机器人api接口，获取智能回复内容
- * @author pamchen-1
  *
  */
 public class TulingApiProcess {

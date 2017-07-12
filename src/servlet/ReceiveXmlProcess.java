@@ -9,7 +9,6 @@ import org.dom4j.Element;
 
 /**
  * 解析接收到的微信xml，返回消息对象
- * @author pamchen-1
  *
  */
 public class ReceiveXmlProcess {

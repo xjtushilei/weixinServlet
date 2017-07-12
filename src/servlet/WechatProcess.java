@@ -5,7 +5,6 @@ import check.check;
 
 /**
  * 微信xml消息处理流程逻辑类
- * @author pamchen-1
  *
  */
 public class WechatProcess {
